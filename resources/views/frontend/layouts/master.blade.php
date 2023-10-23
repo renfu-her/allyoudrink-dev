@@ -19,7 +19,6 @@
         content="https://www.whyyoucry.com/?fbclid=IwAR0Bi2Gqz1Qm9JshILpeRLZ2UAvbLcRJ0ZaSMUsWyyQHPpsV4IMofLTEqu8" />
     <meta property="og:image" content="" />
 
-
     <link href="https://resource.sfec.cloud/vendor/jBox/0.3.2/jBox.min.css" type="text/css" rel="stylesheet"
         media="all" />
     <link href="https://resource.sfec.cloud/vendor/jAlert/v3/jAlert-v3.min.css" type="text/css" rel="stylesheet"
