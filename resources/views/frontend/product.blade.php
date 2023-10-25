@@ -71,7 +71,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_01.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -116,7 +116,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-1.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_02.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -162,7 +162,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_03.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -208,7 +208,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-1.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_04.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -254,7 +254,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_05.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -300,7 +300,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-1.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_06.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -346,7 +346,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_07.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -392,7 +392,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-1.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -438,7 +438,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -504,10 +504,3 @@
     </div>
     <!-- End Content -->
 @endsection
-
-@section('js')
-@endsection
-
-@section('css')
-@endsection
-
