@@ -42,7 +42,7 @@
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex col-12 justify-content-center justify-content-lg-between"
                 id="templatemo_main_nav">
                 <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto ">
+                    <ul class="nav navbar-nav d-flex justify-content-evenly mx-lg-auto ">
                         <li class="nav-item ">
                             <a class="nav-link" href="/">Home</a>
                         </li>
@@ -58,19 +58,19 @@
                     </ul>
                 </div>
 
-                <div class="navbar align-self-center d-flex">
-                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                <div class="navbar align-self-center d-flex justify-content-center">
+                    {{-- <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
                         <div class="input-group">
                             <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
                             <div class="input-group-text">
                                 <i class="fa fa-fw fa-search"></i>
                             </div>
                         </div>
-                    </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                    </div> --}}
+                    {{-- <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
                         data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
+                    </a> --}}
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         {{-- <span
