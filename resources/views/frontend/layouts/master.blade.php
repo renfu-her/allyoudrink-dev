@@ -27,8 +27,8 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="/">
-                購物網站
+            <a class="navbar-brand text-success logo h3 align-self-center col-12" href="/">
+                <span class="d-flex justify-content-center">購物網站</span>
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
