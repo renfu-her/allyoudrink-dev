@@ -19,14 +19,13 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    
+
     @yield('css')
 
 </head>
 
-<body id="page-top">
+<body class="sb-nav-fixed" id="page-top">
 
-    <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -193,6 +192,9 @@
         <!-- End of Content Wrapper -->
 
     </div>
+
+    <!-- Page Wrapper -->
+
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -205,7 +207,7 @@
     </script>
     <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
-    
+
     @yield('js')
 
     @if (Session::has('message'))
