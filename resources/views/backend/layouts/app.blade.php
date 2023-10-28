@@ -721,7 +721,7 @@
     </script>
     <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
-    <script src="{{ asset('admin/js/jquery.dataTable.min.js') }}""></script>
+    <script src="{{ asset('admin/js/jquery.dataTables.min.js') }}""></script>
 
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
