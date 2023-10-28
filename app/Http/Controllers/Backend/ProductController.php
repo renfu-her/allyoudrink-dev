@@ -49,7 +49,7 @@ class ProductController extends Controller
             $ships[$ship->id] = $ship->name;
         }
 
-        $ship_ids = explode(',', $product->ships);
+        $ship_ids = explode(',', $product->ships) ?? [];
 
         return view(
             'backend.product.index',
