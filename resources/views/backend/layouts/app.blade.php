@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('admin/css/dataTables.bootstrap5.min.js') }}">
 
     @yield('css')
 
@@ -721,13 +721,16 @@
     </script>
     <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-        crossorigin="anonymous"></script>
+    <script src="{{ asset('admin/js/jquery.dataTable.min.js') }}""></script>
 
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
 
     @yield('js')
+
+    <script>
+        new DataTable('#datatablesSimple');
+    </script>
 
     @if (Session::has('message'))
         <script>
