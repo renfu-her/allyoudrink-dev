@@ -30,7 +30,8 @@ class ProductController extends Controller
         }
 
         $products = $products->orderByDesc('id')->get();
-
+        $ship_ids = [];
+        
         foreach ($products as $product) {
             $product->category_name = ProductCategory::where('id', $product->category_id)->value('name');
             if ($product->define_image == 1)
@@ -39,6 +40,9 @@ class ProductController extends Controller
                 $product->image_url = 'https://down-tw.img.susercontent.com/file/' . $product->image;
 
             $product->is_free_ship_name = $product->is_free_ship == 1 ? '啟用' : '停用';
+        
+            $ship_ids = explode(',', $product->ships) ?? [];
+
         }
 
         $product_categories = ProductCategory::orderBy('id')->get();
@@ -49,8 +53,8 @@ class ProductController extends Controller
             $ships[$ship->id] = $ship->name;
         }
 
-        $ship_ids = explode(',', $product->ships) ?? [];
-
+        
+        
         return view(
             'backend.product.index',
             compact(
