@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/dataTables.bootstrap5.min.js') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/dataTables.bootstrap5.min.css') }}">
 
     @yield('css')
 
