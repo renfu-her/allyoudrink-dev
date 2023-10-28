@@ -69,14 +69,12 @@
                             管理者管理
                         </a>
                         <div class="sb-sidenav-menu-heading">系統管理</div>
-                        <a class="nav-link collapsed" href="{{ asset('backend/product') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/product') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             產品管理
                         </a>
 
-                        <a class="nav-link collapsed" href="{{ asset('backend/ship') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="{{ asset('backend/ship') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             運送方式管理
                         </a>
@@ -89,28 +87,23 @@
 
                         <div class="sb-sidenav-menu-heading">內容管理</div>
 
-                        <a class="nav-link collapsed" href="{{ asset('backend/qa') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/qa') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Q & A 管理
                         </a>
-                        <a class="nav-link collapsed" href="{{ asset('backend/news') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/news') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             最新消息管理
                         </a>
-                        <a class="nav-link collapsed" href="{{ asset('backend/about-us') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/about-us') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             關於我們管理
                         </a>
-                        <a class="nav-link collapsed" href="{{ asset('backend/policies') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/policies') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             政策管理
                         </a>
-                        <a class="nav-link collapsed" href="{{ asset('backend/mail_notify') }}" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ asset('backend/mail_notify') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Mail 樣板管理
                         </a>
