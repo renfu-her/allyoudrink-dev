@@ -149,7 +149,7 @@
                             DataTable Example
                         </div>
                         <div class="card-body">
-                            <table id="dataTable" class="table table-striped" style="width:100%">
+                            <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -669,7 +669,7 @@
     @yield('js')
 
     <script>
-        new DataTable('#dataTable');
+        new DataTable('#datatables');
     </script>
 
     @if (Session::has('message'))
