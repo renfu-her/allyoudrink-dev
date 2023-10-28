@@ -210,7 +210,7 @@
                             DataTable Example
                         </div>
                         <div class="card-body">
-                            <table id="datatablesSimple">
+                            <table id="datatablesSimple" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
