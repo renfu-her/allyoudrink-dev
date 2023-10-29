@@ -56,7 +56,7 @@ class ProductCategoryController extends Controller
         $req = $request->all();
 
         $data = new ProductCategory();
-        $data->parent_id = $req['parent_id'];
+        $data->parent_id = $req['parent_id'] ?? '';
         $data->name = $req['name'];
         $data->sort = $req['sort'];
         $data->save();
