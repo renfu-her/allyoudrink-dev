@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">ID</th>
-                                <th style="width: 40%">上層分類</th>
+                                <th style="width: 40%">分類</th>
                                 <th style="width: 40%">名稱</th>
                                 <th style="width: 5%">編輯</th>
                                 <th style="width: 5%">刪除</th>
