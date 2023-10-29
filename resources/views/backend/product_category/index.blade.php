@@ -66,8 +66,8 @@
                 targets: [3, 4],
                 orderable: false
             }],
-            order: [
-                [0]
+            "order": [
+                [0, 'asc']
             ],
             "language": {
                 "url": "/admin/zh-HANT.json"
