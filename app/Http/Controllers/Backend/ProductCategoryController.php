@@ -25,11 +25,7 @@ class ProductCategoryController extends Controller
 
         $categories = [];
         foreach($product_categories as $key => $product_category){
-            $categories[$key] = [
-                $product_category->id => $product_category->id,
-                $product_category->name => $product_category->name,
-                $product_category->parent_name => $product_category->parent_name,
-            ];
+            $categories[$key] =  $product_category->name;
         }
         
         return view(
