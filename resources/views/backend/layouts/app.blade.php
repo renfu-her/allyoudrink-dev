@@ -116,7 +116,8 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4 mb-3">
+                <div class="container-fluid px-4">
+                    <div class="mb-3"></div>
                     @yield('content')
                 </div>
             </main>
