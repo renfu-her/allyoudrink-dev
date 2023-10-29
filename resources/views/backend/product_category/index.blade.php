@@ -68,7 +68,7 @@
             }],
             order: [
                 [0, 'asc'],
-            ].
+            ],
             "language": {
                 "url": "/admin/zh-HANT.json"
             }
