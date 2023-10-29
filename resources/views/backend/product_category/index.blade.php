@@ -74,16 +74,16 @@
     })
 
     const edit_row = (id) => {
-        location.href = '/backend/admin/' + id + '/edit';
+        location.href = '/backend/product_category/' + id + '/edit';
     }
 
     const add_row = () => {
-        location.href = '/backend/admin/create';
+        location.href = '/backend/product_category/create';
     }
 
     const delete_row = (id) => {
         if(confirm('確定刪除？')){
-            location.href = '/backend/admin/delete/' + id;
+            location.href = '/backend/product_category/delete/' + id;
         }
     }
 </script>
