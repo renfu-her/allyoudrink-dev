@@ -42,6 +42,7 @@ class ProductCategoryController extends Controller
 
         $product_categories = ProductCategory::all();
         $categories = [];
+        $categories[0] = '無上層分類';
         foreach($product_categories as $key => $product_category){
             $categories[$product_category->id] =  $product_category->name;
         }
@@ -71,6 +72,7 @@ class ProductCategoryController extends Controller
         $product_category = ProductCategory::find($id);
         $product_categories = ProductCategory::all();
         $categories = [];
+        $categories[0] = '無上層分類';
         foreach($product_categories as $key => $product_category){
             $categories[$product_category->id] =  $product_category->name;
         }
