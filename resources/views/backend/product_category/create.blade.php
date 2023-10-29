@@ -31,7 +31,7 @@
                                         </div>
 
                                         <div class="mt-3">
-                                            <x:form::input type="number" class="form-control" name="sort" label="順序" />
+                                            <x:form::input type="number" class="form-control" name="sort" label="順序" value="1" />
                                         </div>
 
                                         <div class="mt-3 text-center">
