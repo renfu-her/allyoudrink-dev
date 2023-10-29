@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\OrderAdminController;
 use App\Http\Controllers\Backend\QaAdminController;
 use App\Http\Controllers\Backend\PolicyAdminController;
+use App\Http\Controllers\Backend\ProductCategoryController;
 
 route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::get('/', [AdminController::class, 'backendTo']);
@@ -61,6 +62,9 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
 
     // 訂單管理
     route::resource('/order', OrderAdminController::class);
+
+    // 產品分類管理
+    route::resource('/product_category', ProductCategoryController::class);
 
     route::get('/policies/delete/{id}', [PolicyAdminController::class, 'delete']);
     route::resource('/policies', PolicyAdminController::class);
