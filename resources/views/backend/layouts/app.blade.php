@@ -66,6 +66,12 @@
                             管理者管理
                         </a>
                         <div class="sb-sidenav-menu-heading">系統管理</div>
+                        
+                        <a class="nav-link collapsed" href="{{ asset('backend/product_category') }}" >
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            產品分類管理
+                        </a>
+                        
                         <a class="nav-link collapsed" href="{{ asset('backend/product') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             產品管理
