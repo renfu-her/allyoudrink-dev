@@ -14,7 +14,7 @@ class ProductCategoryController extends Controller
     public function index(Request $request)
     {
 
-        $product_categories = ProductCategory::orderByDesc('id')->get();
+        $product_categories = ProductCategory::get();
         foreach ($product_categories as $product_category) {
             if(empty($product_category->parent_id)) {
                 $product_category->parent_name = $product_category->name;
@@ -25,7 +25,7 @@ class ProductCategoryController extends Controller
 
         $categories = [];
         foreach($product_categories as $key => $product_category){
-            $categories[$key] =  $product_category->name;
+            $categories[$product_category->id] =  $product_category->name;
         }
         
         return view(
@@ -40,13 +40,10 @@ class ProductCategoryController extends Controller
     public function create(Request $request)
     {
 
-        $categories = ProductCategory::all();
-        foreach ($categories as $product_category) {
-            if(empty($product_category->parent_id)) {
-                $product_category->parent_name = $product_category->name;
-            } else {
-                $product_category->parent_name = ProductCategory::where('id', $product_category->parent_id)->value('name') . ' -> ' . $product_category->name;
-            }
+        $product_categories = ProductCategory::all();
+        $categories = [];
+        foreach($product_categories as $key => $product_category){
+            $categories[$product_category->id] =  $product_category->name;
         }
         
         return view('backend.product_category.create', compact('categories'));
@@ -72,8 +69,12 @@ class ProductCategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $product_category = ProductCategory::find($id);
-        $categories = ProductCategory::all();
-        
+        $product_categories = ProductCategory::all();
+        $categories = [];
+        foreach($product_categories as $key => $product_category){
+            $categories[$product_category->id] =  $product_category->name;
+        }
+
         return view(
             'backend.product_category.edit',
             compact('product_category','categories')
