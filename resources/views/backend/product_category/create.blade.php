@@ -27,7 +27,7 @@
                                             <x:form::select name="parent_id" label="產品分類"  :options="$categories"  required />
                                         </div>
                                         <div class="mt-3">
-                                            <x:form::input name="name" label="姓名" required />
+                                            <x:form::input name="name" label="分類名稱" required />
                                         </div>
 
                                         <div class="mt-3">
