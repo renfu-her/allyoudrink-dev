@@ -18,20 +18,24 @@
             <div class="form-group row g-3" style="color: #000 !important">
                 <div class="col-md-12 col-12">
                     <div class="row no-gutters">
-                        <label class="m-1 col-form-label text-right">分類： </label>
-                        <div class="m-1">
-                            <select id="category_id" name="category_id" class="form-control col-12">
-                                <option value="">全部</option>
-                                @foreach ($product_categories as $value)
-                                    <option value="{{ $value['id'] }}" @if ($category_id == $value['id']) selected @endif>
-                                        {{ $value['name'] }}
-                                    </option>
-                                @endforeach
-                            </select>
+                        <div class="col-6">
+                            <label class="m-1 col-form-label text-right">分類： </label>
+                            <div class="m-1">
+                                <select id="category_id" name="category_id" class="form-control col-12">
+                                    <option value="">全部</option>
+                                    @foreach ($product_categories as $value)
+                                        <option value="{{ $value['id'] }}" @if ($category_id == $value['id']) selected @endif>
+                                            {{ $value['name'] }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <label class="m-1 col-form-label text-right">標題(可以打部分文字)： </label>
-                        <div class="m-1">
-                            <input type="text" class="form-control" id="prod_name" name="prod_name" value="{{ $prod_name }}">
+                        <div class="col-6">
+                            <label class="m-1 col-form-label text-right">標題(可以打部分文字)： </label>
+                            <div class="m-1">
+                                <input type="text" class="form-control" id="prod_name" name="prod_name" value="{{ $prod_name }}">
+                            </div>
                         </div>
                         <div class="m-1 text-center">
                             <button type="submit" class="btn btn-success">搜尋</button>
