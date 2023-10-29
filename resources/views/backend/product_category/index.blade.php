@@ -30,7 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($categories as $key => $value)
+                            @foreach($product_categories as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
                                 <td>{{ $value->parent_name }}</td>

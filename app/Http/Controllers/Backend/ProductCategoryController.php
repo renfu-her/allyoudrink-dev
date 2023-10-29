@@ -22,16 +22,11 @@ class ProductCategoryController extends Controller
                 $product_category->parent_name = ProductCategory::where('id', $product_category->parent_id)->value('name') . ' -> ' . $product_category->name;
             }
         }
-
-        $categories = [];
-        foreach($product_categories as $key => $product_category){
-            $categories[$product_category->id] =  $product_category->name;
-        }
         
         return view(
             'backend.product_category.index',
             compact(
-                'categories',
+                'product_categories',
             )
         );
     }
