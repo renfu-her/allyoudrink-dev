@@ -66,7 +66,7 @@
     $(function(){
         $('#dataTable').DataTable({
             "columnDefs": [{
-                targets: [3, 4],
+                targets: [2, 3, 4],
                 orderable: false
             }],
             "order": [
