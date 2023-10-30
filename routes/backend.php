@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\OrderAdminController;
 use App\Http\Controllers\Backend\QaAdminController;
 use App\Http\Controllers\Backend\PolicyAdminController;
 use App\Http\Controllers\Backend\ProductCategoryController;
+use App\Http\Controllers\Backend\ProductCategoryDetailController;
 
 route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::get('/', [AdminController::class, 'backendTo']);
@@ -64,11 +65,11 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::resource('/order', OrderAdminController::class);
 
     // 產品分類管理
-    route::get('/product_category/detail/{product_category_id}', [ProductCategoryController::class, 'index'])->name('product_category.index');
-    route::get('/product_category/delete/{product_category_id}/create', [ProductCategoryController::class, 'create'])->name('product_category.delete');
-    route::post('/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'edit'])->name('product_category.edit');
-    route::match(['PUT', 'PATCH'], '/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'update'])->name('product_category.update');
-    route::get('/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'delete'])->name('product_category.delete');
+    route::get('/product_category/detail/{product_category_id}', [ProductCategoryDetailController::class, 'index'])->name('product_category.index');
+    route::get('/product_category/delete/{product_category_id}/create', [ProductCategoryDetailController::class, 'create'])->name('product_category.delete');
+    route::post('/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'edit'])->name('product_category.edit');
+    route::match(['PUT', 'PATCH'], '/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'update'])->name('product_category.update');
+    route::get('/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'delete'])->name('product_category.delete');
     route::resource('/product_category', ProductCategoryController::class);
 
     route::get('/policies/delete/{id}', [PolicyAdminController::class, 'delete']);
