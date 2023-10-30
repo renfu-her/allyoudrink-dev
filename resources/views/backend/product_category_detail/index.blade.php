@@ -7,7 +7,8 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">產品主分類</h1>
+            <h1 class="h3 mb-0 text-gray-800">產品分類</h1>
+            <h2>{{ $productCategory->name }}</h2>
         </div>
 
         <button onclick="add_row()" class="btn btn-success mb-3">
@@ -23,17 +24,15 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">ID</th>
-                                <th style="width: 40%">主分類</th>
-                                <th style="width: 40%">名稱</th>
-                                <th style="width: 5%">編輯</th>
-                                <th style="width: 5%">刪除</th>
+                                <th style="width: 70%">分類名稱</th>
+                                <th style="width: 10%">編輯</th>
+                                <th style="width: 10%">刪除</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($product_categories as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->parent_name }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
                                     <button class="btn btn-primary" onclick="edit_row({{ $value->id }})">
@@ -76,17 +75,17 @@
 
     })
 
-    const edit_row = (id) => {
-        location.href = '/backend/product_category/' + id + '/edit';
+    const edit_row = (categoriId) => {
+        location.href = '/backend/product_category/detail/' + categoriId + '/edit';
     }
 
-    const add_row = () => {
-        location.href = '/backend/product_category/create';
+    const add_row = (categoriId) => {
+        location.href = '/backend/product_category/detail/' + categoriId + '/create';
     }
 
-    const delete_row = (id) => {
+    const delete_row = (categoriId) => {
         if(confirm('確定刪除？')){
-            location.href = '/backend/product_category/delete/' + id;
+            location.href = '/backend/product_category/detail/delete/' + categoriId;
         }
     }
 </script>
