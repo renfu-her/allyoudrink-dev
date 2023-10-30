@@ -90,7 +90,7 @@ class ProductCategoryController extends Controller
     // 產品刪除
     public function delete(Request $request, $id)
     {
-        $product = Product::find($id);
+        $product = ProductCategory::find($id);
         $product->delete();
 
         return redirect('/backend/product_category');

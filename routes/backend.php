@@ -64,12 +64,12 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::resource('/order', OrderAdminController::class);
 
     // 產品分類管理
-    route::resource('/product_category', ProductCategoryController::class);
     route::get('/product_category/detail/{product_category_id}', [ProductCategoryController::class, 'index'])->name('product_category.index');
     route::get('/product_category/delete/{product_category_id}/create', [ProductCategoryController::class, 'create'])->name('product_category.delete');
     route::post('/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'edit'])->name('product_category.edit');
     route::match(['PUT', 'PATCH'], '/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'update'])->name('product_category.update');
     route::get('/product_category/delete/{product_category_id}', [ProductCategoryController::class, 'delete'])->name('product_category.delete');
+    route::resource('/product_category', ProductCategoryController::class);
 
     route::get('/policies/delete/{id}', [PolicyAdminController::class, 'delete']);
     route::resource('/policies', PolicyAdminController::class);

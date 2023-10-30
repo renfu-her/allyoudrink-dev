@@ -19,13 +19,12 @@
 
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" data-order='[[ 0, "asc" ]]' id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" data-order='[[ 0, "desc" ]]' id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th style="width: 10%">ID</th>
-                                <th style="width: 30%">主分類</th>
-                                <th style="width: 30%">名稱</th>
-                                <th style="width: 20%">次要分類</th>
+                                <th style="width: 40%">主分類</th>
+                                <th style="width: 40%">名稱</th>
                                 <th style="width: 5%">編輯</th>
                                 <th style="width: 5%">刪除</th>
                             </tr>
@@ -36,10 +35,6 @@
                                 <td>{{ $value->id }}</td>
                                 <td>{{ $value->parent_name }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>
-                                    <button class="btn btn-primary" onclick="edit_parent_row({{ $value->id }})">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
                                 <td>
                                     <button class="btn btn-primary" onclick="edit_row({{ $value->id }})">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -80,10 +75,6 @@
         })
 
     })
-
-    const edit_parent_row = (id) => {
-        location.href = '/backend/product_category/detail/' + id + '/edit';
-    }
 
     const edit_row = (id) => {
         location.href = '/backend/product_category/' + id + '/edit';
