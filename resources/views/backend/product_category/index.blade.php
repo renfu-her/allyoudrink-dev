@@ -23,18 +23,16 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">ID</th>
-                                <th style="width: 30%">主分類</th>
-                                <th style="width: 30%">名稱</th>
-                                <th style="width: 20%">次要分類</th>
-                                <th style="width: 5%">編輯</th>
-                                <th style="width: 5%">刪除</th>
+                                <th style="width: 60%">名稱</th>
+                                <th style="width: 10%">次要分類</th>
+                                <th style="width: 10%">編輯</th>
+                                <th style="width: 10%">刪除</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($product_categories as $key => $value)
                             <tr>
                                 <td>{{ $value->id }}</td>
-                                <td>{{ $value->parent_name }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
                                     <button class="btn btn-primary" onclick="edit_parent_row({{ $value->id }})">
