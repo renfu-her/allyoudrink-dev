@@ -65,7 +65,7 @@
     $(function(){
         $('#dataTable').DataTable({
             columnDefs: [{
-                targets: [4, 5],
+                targets: [3, 4],
                 orderable: false
             }],
             "language": {
