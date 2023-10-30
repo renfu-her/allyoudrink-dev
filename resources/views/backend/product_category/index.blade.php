@@ -80,7 +80,7 @@
     })
 
     const edit_parent_row = (id) => {
-        location.href = '/backend/product_category/detail/' + id + '/edit';
+        location.href = '/backend/product_category/detail/' + id;
     }
 
     const edit_row = (id) => {
