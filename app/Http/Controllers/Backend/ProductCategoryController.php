@@ -14,13 +14,9 @@ class ProductCategoryController extends Controller
     public function index(Request $request)
     {
 
-        $product_categories = ProductCategory::get();
+        $product_categories = ProductCategory::where('parent_id', 0)->get();
         foreach ($product_categories as $product_category) {
-            if(empty($product_category->parent_id)) {
-                $product_category->parent_name = $product_category->name;
-            } else {
-                $product_category->parent_name = ProductCategory::where('id', $product_category->parent_id)->value('name') . ' -> ' . $product_category->name;
-            }
+            $product_category->parent_name = $product_category->name;
         }
         
         return view(
@@ -52,7 +48,7 @@ class ProductCategoryController extends Controller
         $req = $request->all();
 
         $data = new ProductCategory();
-        $data->parent_id = $req['parent_id'] ?? '';
+        $data->parent_id = 0;
         $data->name = $req['name'];
         $data->sort = $req['sort'];
         $data->save();
@@ -83,7 +79,7 @@ class ProductCategoryController extends Controller
     {
 
         $data = ProductCategory::find($productId);
-        $data->parent_id = $request->parent_id;
+        $data->parent_id = 0;
         $data->name = $request->name;
         $data->sort = $request->sort;
         $data->save();

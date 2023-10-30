@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">產品分類</h1>
+            <h1 class="h3 mb-0 text-gray-800">產品主分類</h1>
         </div>
 
         <button onclick="add_row()" class="btn btn-success mb-3">
@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">ID</th>
-                                <th style="width: 40%">分類</th>
+                                <th style="width: 40%">主分類</th>
                                 <th style="width: 40%">名稱</th>
                                 <th style="width: 5%">編輯</th>
                                 <th style="width: 5%">刪除</th>

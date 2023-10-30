@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">產品分類 - 新增</h1>
+            <h1 class="h3 mb-0 text-gray-800">產品主分類 - 新增</h1>
         </div>
 
         <!-- DataTales Example -->
@@ -23,9 +23,6 @@
                                 <div class="sbp-preview-content">
                                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data" :action="route('product_category.store')" >
 
-                                        <div class="mt-3">
-                                            <x:form::select name="parent_id" label="產品分類"  :options="$categories"  required />
-                                        </div>
                                         <div class="mt-3">
                                             <x:form::input name="name" label="分類名稱" required />
                                         </div>
