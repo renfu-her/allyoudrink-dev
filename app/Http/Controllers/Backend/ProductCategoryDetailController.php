@@ -10,12 +10,12 @@ use App\Models\ProductCategory;
 class ProductCategoryDetailController extends Controller
 {
      // 產品首頁
-     public function index(Request $request)
+     public function index(Request $request, $categoryId)
      {
  
         $req = $request->all();
 
-         $product_categories = ProductCategory::where('parent_id', $req['parent_id'])->get();
+         $product_categories = ProductCategory::where('parent_id', $categoryId)->get();
          foreach ($product_categories as $product_category) {
              $product_category->parent_name = $product_category->name;
          }
@@ -29,19 +29,14 @@ class ProductCategoryDetailController extends Controller
      }
  
      // 產品新增頁面
-     public function create(Request $request)
+     public function create(Request $request, $categoryId)
      {
  
         $req = $request->all();
 
-         $product_categories = ProductCategory::where('parent_id', $req['parent_id'])->get();
-         $categories = [];
-         $categories[0] = '無上層分類';
-         foreach($product_categories as $key => $product_category){
-             $categories[$product_category->id] =  $product_category->name;
-         }
-         
-         return view('backend.product_category_detail.create', compact('categories'));
+         $product_categories = ProductCategory::where('id', $categoryId)->first();
+        
+         return view('backend.product_category_detail.create', compact('product_categories'));
      }
  
      // 產品新增儲存
@@ -64,16 +59,10 @@ class ProductCategoryDetailController extends Controller
      public function edit(Request $request, $categoryId)
      {
          $product_category = ProductCategory::find($categoryId);
-         $product_categories = ProductCategory::all();
-         $categories = [];
-         $categories[0] = '無上層分類';
-         foreach($product_categories as $key => $product_category){
-             $categories[$product_category->id] =  $product_category->name;
-         }
- 
+         
          return view(
              'backend.product_category_detail.edit',
-             compact('product_category','categories')
+             compact('product_category', 'categoryId')
          );
      }
  
