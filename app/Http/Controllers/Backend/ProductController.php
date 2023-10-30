@@ -34,15 +34,9 @@ class ProductController extends Controller
         
         foreach ($products as $product) {
             $product->category_name = ProductCategory::where('id', $product->category_id)->value('name');
-            if ($product->define_image == 1)
-                $product->image_url = asset('upload/images/' . $product->id . '/' . $product->image);
-            else
-                $product->image_url = 'https://down-tw.img.susercontent.com/file/' . $product->image;
-
+            $product->image_url = asset('upload/images/' . $product->id . '/' . $product->image);
             $product->is_free_ship_name = $product->is_free_ship == 1 ? '啟用' : '停用';
-        
             $ship_ids = explode(',', $product->ships) ?? [];
-
         }
 
         $product_categories = ProductCategory::orderBy('id')->get();
@@ -118,7 +112,6 @@ class ProductController extends Controller
             $imageName = time() . '.' . $file->extension();
             $file->move(public_path('upload/images/' . $productId), $imageName);
             $menuImage->image = $imageName;
-            $menuImage->define_image = 1;
             $menuImage->save();
         }
 
@@ -180,7 +173,6 @@ class ProductController extends Controller
             $imageName = time() . '.' . $file->extension();
             $file->move(public_path('upload/images/' . $productId), $imageName);
             $menuImage->image = $imageName;
-            $menuImage->define_image = 1;
             $menuImage->save();
         }
 

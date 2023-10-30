@@ -15,11 +15,7 @@ class ProductImageController extends Controller
     {
         $product_images = ProductImage::where('product_id', $product_id)->get();
         foreach ($product_images as $product_image) {
-            if($product_image->define_image == 0){
-                $product_image->image_url = 'https://down-tw.img.susercontent.com/file/' .$product_image->image;
-            } else {
-                $product_image->image_url = asset('upload/images/' . $product_image->product_id . '/' . $product_image->image);
-            }
+            $product_image->image_url = asset('upload/images/' . $product_image->product_id . '/' . $product_image->image);
         }
 
         return view('backend.productImage.index', [
@@ -44,7 +40,7 @@ class ProductImageController extends Controller
         $product_image = new ProductImage;
         $product_image->product_id = $product_id;
         $product_image->sort = $req['sort'];
-        $product_image->define_image = 1;
+        // $product_image->define_image = 1;
         $product_image->save();
 
         $product_image_id = $product_image->id;
@@ -79,7 +75,7 @@ class ProductImageController extends Controller
 
         $product_image = ProductImage::find($product_image_id);
         $product_image->sort = $req['sort'];
-        $product_image->define_image = 1;
+        // $product_image->define_image = 1;
         $product_image->save();
 
         $product_id = $product_image->product_id;
