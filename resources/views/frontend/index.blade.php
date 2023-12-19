@@ -19,7 +19,7 @@
                                     @foreach ($category->children as $child)
                                         <li>
                                             <a class="text-decoration-none" href="#">
-                                                {{ $child_category->name }}
+                                                {{ $child->name }}
                                             </a>
                                         </li>
                                     @endforeach
