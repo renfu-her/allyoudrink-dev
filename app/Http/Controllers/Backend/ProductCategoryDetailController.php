@@ -63,6 +63,8 @@ class ProductCategoryDetailController extends Controller
     {
         $product_category = ProductCategory::find($categoryId);
 
+        dd($product_category, $categoryId);
+
         return view(
             'backend.product_category_detail.edit',
             compact('product_category', 'categoryId')
