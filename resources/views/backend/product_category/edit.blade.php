@@ -21,8 +21,10 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
+                                    {{ var_dump($product_category) }}
                                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
-                                        :action="route('product_category.update', $product_category->id)" :bind="$product_category">
+                                        :action="route('product_category.update', $product_category - > id)"
+                                        :bind="$product_category">
 
                                         <div class="mt-3">
                                             <x:form::input name="name" label="分類名稱" required />
