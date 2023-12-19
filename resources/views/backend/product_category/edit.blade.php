@@ -21,7 +21,6 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
-                                    {{ var_dump($product_category->id) }}
                                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
                                         :action="route('product_category.update', $product_category->id)"
                                         :bind="$product_category">
