@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\IndexController;
 
-
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/', [IndexController::class, 'home']);
