@@ -61,6 +61,7 @@ class ProductCategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $product_category = ProductCategory::find($id);
+        dd($id, $product_category);
         $product_categories = ProductCategory::all();
         $categories = [];
         $categories[0] = '無上層分類';
