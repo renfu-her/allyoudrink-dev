@@ -60,20 +60,20 @@ class ProductCategoryController extends Controller
     // 產品編輯頁面
     public function edit(Request $request, $id)
     {
-        $product_category = ProductCategory::where('id', $id)->first();
-        $product_categories = ProductCategory::all();
-        $categories = [];
-        $categories[0] = '無上層分類';
-        foreach($product_categories as $key => $product_category){
-            $categories[$product_category->id] =  $product_category->name;
-        }
-
-        var_dump($id);
-        var_dump('id:' . $id, $product_category->id);
+        $product_category = ProductCategory::where('id', '=', $id)->first();
+        // $product_categories = ProductCategory::all();
+        
+        dd($product_category);
+        
+        // $categories = [];
+        // $categories[0] = '無上層分類';
+        // foreach($product_categories as $key => $product_category){
+        //     $categories[$product_category->id] =  $product_category->name;
+        // }
 
         return view(
             'backend.product_category.edit',
-            compact('product_category','categories')
+            compact('product_category')
         );
     }
 
