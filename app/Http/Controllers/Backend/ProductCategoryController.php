@@ -63,7 +63,7 @@ class ProductCategoryController extends Controller
         $product_category = ProductCategory::where('id', '=', $id)->first();
         // $product_categories = ProductCategory::all();
         
-        dd($product_category);
+        dd($product_category->toArray());
         
         // $categories = [];
         // $categories[0] = '無上層分類';
