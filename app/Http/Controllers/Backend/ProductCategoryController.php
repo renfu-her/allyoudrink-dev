@@ -69,6 +69,7 @@ class ProductCategoryController extends Controller
         }
 
         var_dump($id);
+        var_dump('id:' . $id, $product_category->id);
 
         return view(
             'backend.product_category.edit',
