@@ -17,6 +17,8 @@ class IndexController extends Controller
 
         $req = $request->all();
 
+        $products = Product::get();
+
         $categories = ProductCategory::whereNull('parent_id')->with('children')->get();
 
         return view('index', compact('products', 'categories'));
