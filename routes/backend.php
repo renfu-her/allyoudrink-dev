@@ -67,8 +67,8 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     // 產品分類管理
     route::get('/product_category/detail/{product_category_id}/', [ProductCategoryDetailController::class, 'index'])->name('product_category_detail.index');
     route::get('/product_category/delete/{product_category_id}/create', [ProductCategoryDetailController::class, 'create'])->name('product_category_detail.create');
-    route::post('/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'edit'])->name('product_category_detail.edit');
-    route::match(['PUT', 'PATCH'], '/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'update'])->name('product_category_detail.update');
+    route::post('/product_category/detail/{product_category_id}/edit', [ProductCategoryDetailController::class, 'edit'])->name('product_category_detail.edit');
+    route::match(['PUT', 'PATCH'], '/product_category/detail/{product_category_id}', [ProductCategoryDetailController::class, 'update'])->name('product_category_detail.update');
     route::get('/product_category/delete/{product_category_id}', [ProductCategoryDetailController::class, 'delete'])->name('product_category_detail.delete');
     
     route::resource('/product_category', ProductCategoryController::class);
