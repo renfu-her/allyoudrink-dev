@@ -61,16 +61,7 @@ class ProductCategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $product_category = ProductCategory::where('id', '=', $id)->first();
-        // $product_categories = ProductCategory::all();
         
-        dd($product_category->toArray());
-        
-        // $categories = [];
-        // $categories[0] = '無上層分類';
-        // foreach($product_categories as $key => $product_category){
-        //     $categories[$product_category->id] =  $product_category->name;
-        // }
-
         return view(
             'backend.product_category.edit',
             compact('product_category')
