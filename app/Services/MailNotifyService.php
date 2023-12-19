@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Services\BaseService;
+use App\Services\Service;
 
 use App\Models\MailNotify;
 use App\Models\Member;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use DB;
 use Log;
 
-class MailNotifyService extends BaseService
+class MailNotifyService extends Service
 {
     private $bcc_list = ['renfu.her@gmail.com'];
     public $to_email = 'renfu.her+register@gmai.com';

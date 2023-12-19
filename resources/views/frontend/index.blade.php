@@ -8,17 +8,25 @@
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">所有目録</h1>
                 <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            蕎拉燕麥
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">所有商品</a></li>
-                            <li><a class="text-decoration-none" href="#">熱銷裸食</a></li>
-                            <li><a class="text-decoration-none" href="#">無罪惡纖女</a></li>
-                        </ul>
-                    </li>
+                    @foreach ($categories as $category)
+                        <li class="pb-3">
+                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                                {{ $category->name }}
+                                <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                            </a>
+                            @if ($category->children->isNotEmpty())
+                                <ul class="collapse list-unstyled pl-3">
+                                    @foreach ($category->children as $child)
+                                        <li>
+                                            <a class="text-decoration-none" href="#">
+                                                {{ $child_category->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </li>
+                    @endforeach
                     <li class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
                             咖啡
@@ -43,22 +51,7 @@
             </div>
 
             <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">所有商品</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">蕎拉燕麥</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">熱銷裸食</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
@@ -126,8 +119,7 @@
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                     <li>M/L/X/XL</li>
                                     <li class="pt-2">
-                                        <span
-                                            class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span
                                             class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
                                         <span
@@ -502,4 +494,3 @@
 
 @section('css')
 @endsection
-
