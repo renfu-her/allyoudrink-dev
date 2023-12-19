@@ -19,7 +19,7 @@ class IndexController extends Controller
 
         $products = Product::get();
 
-        $categories = ProductCategory::whereNull('parent_id')->with('children')->get();
+        $categories = ProductCategory::where('parent_id, 0')->with('children')->get();
 
         dd($categories);
 
