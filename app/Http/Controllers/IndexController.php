@@ -21,6 +21,6 @@ class IndexController extends Controller
 
         $categories = ProductCategory::whereNull('parent_id')->with('children')->get();
 
-        return view('index', compact('products', 'categories'));
+        return view('frontend.index', compact('products', 'categories'));
     }
 }
