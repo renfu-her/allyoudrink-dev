@@ -21,6 +21,8 @@ class IndexController extends Controller
 
         $categories = ProductCategory::whereNull('parent_id')->with('children')->get();
 
+        dd($categories);
+
         return view('index', compact('products', 'categories'));
     }
 }
