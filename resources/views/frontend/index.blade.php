@@ -18,7 +18,7 @@
                                 <ul class="collapse list-unstyled pl-3">
                                     @foreach ($category->children as $child)
                                         <li>
-                                            <a class="text-decoration-none" href="#">
+                                            <a class="text-decoration-none" href="/?category={{ $child->id }}">
                                                 {{ $child->name }}
                                             </a>
                                         </li>
@@ -27,26 +27,6 @@
                             @endif
                         </li>
                     @endforeach
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            咖啡
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">所有商品</a></li>
-                            <li><a class="text-decoration-none" href="#">台灣咖啡 🇹🇼</a></li>
-                            <li><a class="text-decoration-none" href="#">星期一咖啡</a></li>
-                        </ul>
-                    </li>
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            定期購
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">所有商品</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
 
