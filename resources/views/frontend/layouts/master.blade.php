@@ -44,16 +44,17 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-evenly mx-lg-auto ">
                         <li class="nav-item ">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">首頁</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="/shop">購物</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="/about">關於我們</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="/contact">聯絡我們</a>
                         </li>
                     </ul>
                 </div>
