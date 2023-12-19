@@ -60,7 +60,7 @@ class ProductCategoryController extends Controller
     // 產品編輯頁面
     public function edit(Request $request, $id)
     {
-        $product_category = ProductCategory::where('id', '=', $id)->first();
+        $product_category = ProductCategory::where('id', $id)->first();
         
         return view(
             'backend.product_category.edit',
