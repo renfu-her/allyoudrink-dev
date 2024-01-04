@@ -22,7 +22,7 @@
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
                                     <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
-                                        :action="route('product_category.store')">
+                                        :action="route('product_category_detail.store')">
 
                                         <div class="mt-3">
                                             <x:form::input name="name" label="次要分類名稱" required />
@@ -34,7 +34,7 @@
                                         </div>
 
                                         <div class="mt-3 text-center">
-                                            <x:form::button.link class="btn-secondary" href="/backend/product_category">取消
+                                            <x:form::button.link class="btn-secondary" href="/backend/product_category/detail/{{ $categoryId }}">取消
                                             </x:form::button.link>
                                             <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
 
