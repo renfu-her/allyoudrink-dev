@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">產品主分類 - 編輯</h1>
+            <h1 class="h3 mb-0 text-gray-800">產品次要分類 - 編輯</h1>
         </div>
 
         <!-- DataTales Example -->
@@ -26,7 +26,7 @@
                                         :bind="$product_category">
 
                                         <div class="mt-3">
-                                            <x:form::input name="name" label="分類名稱" required />
+                                            <x:form::input name="name" label="次要分類名稱" required />
                                         </div>
 
                                         <div class="mt-3">

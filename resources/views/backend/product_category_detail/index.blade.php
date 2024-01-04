@@ -76,11 +76,11 @@
     })
 
     const edit_row = (categoriId) => {
-        location.href = '/backend/product_category/detail/' + categoriId + '/edit';
+        location.href = '/backend/product_category/detail/' + productCategory->id + '/edit/' + categoriId;
     }
 
-    const add_row = (categoriId) => {
-        location.href = '/backend/product_category/detail/' + categoriId + '/create';
+    const add_row = () => {
+        location.href = '/backend/product_category/detail/' + productCategory->id + '/create';
     }
 
     const delete_row = (categoriId) => {
