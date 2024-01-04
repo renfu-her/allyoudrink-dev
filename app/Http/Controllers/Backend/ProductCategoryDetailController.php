@@ -59,11 +59,11 @@ class ProductCategoryDetailController extends Controller
     }
 
     // 產品編輯頁面
-    public function edit(Request $request, $categoryId)
+    public function edit(Request $request, $categoryId, $categoryDetailId)
     {
         $product_category = ProductCategory::find($categoryId);
 
-        dd($product_category->toArray(), $categoryId);
+        dd($product_category->toArray(), $categoryId, $categoryDetailId);
 
         return view(
             'backend.product_category_detail.edit',
