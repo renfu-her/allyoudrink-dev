@@ -65,7 +65,7 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::resource('/order', OrderAdminController::class);
 
     // 產品分類管理
-    route::get('/product_category/detail/{product_category_id}/', [ProductCategoryDetailController::class, 'index'])->name('product_category_detail.index');
+    route::get('/product_category/detail/{product_category_id}', [ProductCategoryDetailController::class, 'index'])->name('product_category_detail.index');
     route::get('/product_category/detail/{product_category_id}/create', [ProductCategoryDetailController::class, 'create'])->name('product_category_detail.create');
     route::get('/product_category/detail/{product_category_id}/edit', [ProductCategoryDetailController::class, 'edit'])->name('product_category_detail.edit');
     route::post('/product_category/detail/{product_category_id}', [ProductCategoryDetailController::class, 'store'])->name('product_category_detail.store');
