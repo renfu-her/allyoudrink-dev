@@ -61,21 +61,11 @@
     <script>
         $(function() {
 
-            $('.password-input').find('label').html('密碼 <span style="color: red">(請輸入6 位以上，密碼必須包含字母以及數字組成)</span>')
-
             $('#form_post').on('submit', function() {
                 let error_msg = [];
 
                 if ($('input[name=name]').val() == '') {
-                    error_msg.push('請輸入姓名');
-                }
-
-                if ($('input[name=email]').val() == '') {
-                    error_msg.push('請輸入E-mail');
-                }
-
-                if ($('input[name=password]').val() == '') {
-                    error_msg.push('請輸入密碼');
+                    error_msg.push('請輸入次要分類名稱');
                 }
 
                 if (error_msg.length > 0) {
