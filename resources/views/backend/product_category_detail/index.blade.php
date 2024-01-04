@@ -6,9 +6,9 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="d-sm-flex align-items-center justify-content-start mb-4">
             <h1 class="h3 mb-0 text-gray-800">產品分類</h1>
-            <h2>{{ $productCategory->name }}</h2>
+            <h4>{{ $productCategory->name }}</h4>
         </div>
 
         <button onclick="add_row()" class="btn btn-success mb-3">
@@ -76,11 +76,11 @@
     })
 
     const edit_row = (categoriId) => {
-        location.href = '/backend/product_category/detail/' + productCategory->id + '/edit/' + categoriId;
+        location.href = '/backend/product_category/detail/{{ $productCategory->id }}/edit/' + categoriId;
     }
 
     const add_row = () => {
-        location.href = '/backend/product_category/detail/' + productCategory->id + '/create';
+        location.href = '/backend/product_category/detail/{{ $productCategory->id }}/create';
     }
 
     const delete_row = (categoriId) => {

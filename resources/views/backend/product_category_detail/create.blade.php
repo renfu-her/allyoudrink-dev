@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">產品主分類 - 新增</h1>
+            <h1 class="h3 mb-0 text-gray-800">產品次要分類 - 新增</h1>
         </div>
 
         <!-- DataTales Example -->
