@@ -22,7 +22,8 @@
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
                                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
-                                        :action="route('product_category.update', $product_category->id)" :bind="$product_category">
+                                        :action="route('product_category.update', $product_category->id)"
+                                        :bind="$product_category">
 
                                         <div class="mt-3">
                                             <x:form::input name="name" label="分類名稱" required />
@@ -33,9 +34,10 @@
                                                 label="順序" />
                                         </div>
                                         <div class="mt-3 text-center">
-                                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
                                             <x:form::button.link class="btn-secondary" href="/backend/product_category">取消
                                             </x:form::button.link>
+                                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
+
                                         </div>
 
                                     </x:form::form>

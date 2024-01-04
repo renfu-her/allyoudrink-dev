@@ -21,7 +21,8 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
-                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data" :action="route('admin.update', $user->id)" :bind="$user">
+                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
+                                        :action="route('admin.update', $user - > id)" :bind="$user">
 
                                         <div class="mt-3">
                                             <x:form::input name="name" label="姓名" required />
@@ -43,7 +44,7 @@
 
                                         <div class="mt-3 text-center">
                                             <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
-                                            <x:form::button.link class="btn-secondary" href="/backend/user">取消
+                                            <x:form::button.link class="btn-secondary" href="/backend/user">
                                             </x:form::button.link>
                                         </div>
 
@@ -67,25 +68,25 @@
     <script>
         $(function() {
 
-            $('.password-input').find('label').html('密碼 <span style="color: red">(保留密碼，請留下空白；更改密碼，請輸入6 位以上，密碼必須包含字母以及數字組成)</span>')
+            $('.password-input').find('label').html(
+                '密碼 <span style="color: red">(保留密碼，請留下空白；更改密碼，請輸入6 位以上，密碼必須包含字母以及數字組成)</span>')
 
-            $('#form_post').on('submit', function(){
+            $('#form_post').on('submit', function() {
                 let error_msg = [];
 
-                if($('input[name=name]').val() == ''){
+                if ($('input[name=name]').val() == '') {
                     error_msg.push('請輸入姓名');
                 }
 
-                if($('input[name=email]').val() == ''){
+                if ($('input[name=email]').val() == '') {
                     error_msg.push('請輸入E-mail');
                 }
 
-                if(error_msg.length > 0){
+                if (error_msg.length > 0) {
                     alert(error_msg.join('\n'));
                     return false;
                 }
             })
         })
-
-   </script>
+    </script>
 @endsection

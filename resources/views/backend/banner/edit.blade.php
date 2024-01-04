@@ -21,21 +21,23 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
-                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data" :action="route('banner.update', $banner->id)" :bind="$banner">
+                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
+                                        :action="route('banner.update', $banner->id)" :bind="$banner">
 
                                         <div class="mt-3">
                                             <x:form::input name="title" label="標題" />
                                         </div>
 
                                         <div class="mt-3">
-                                            <x:form::input name="link" label="URL"/>
+                                            <x:form::input name="link" label="URL" />
                                         </div>
 
                                         <div class="mt-3">
-                                            @if($banner->image)
-                                                <img src="{{ asset('upload/banner/' . $banner->image) }}" style="width: 15rem">
+                                            @if ($banner->image)
+                                                <img src="{{ asset('upload/banner/' . $banner->image) }}"
+                                                    style="width: 15rem">
                                             @endif
-                                            <x:form::input type="file" name="image" label="Banner 圖片"/>
+                                            <x:form::input type="file" name="image" label="Banner 圖片" />
                                         </div>
 
                                         <div class="mt-3">
@@ -43,12 +45,12 @@
                                         </div>
 
                                         <div class="mt-3">
-                                            <x:form::input type="number" name="sort" label="順序"/>
+                                            <x:form::input type="number" name="sort" label="順序" />
                                         </div>
 
                                         <div class="mt-3">
                                             <x:form::select class="form-control" name="status" label="啓用狀態"
-                                                :options="[1 => '啓用', 0 => '停用']" :selected="$banner->status" />
+                                                :options="[1 => '啓用', 0 => '停用']" :selected="$banner - > status" />
                                         </div>
 
                                         <div class="mt-3 text-center">
@@ -78,7 +80,7 @@
     <script>
         $(function() {
 
-            $('#form_post').on('submit', function(){
+            $('#form_post').on('submit', function() {
                 let error_msg = []
 
                 if ($('input[name=title]').val() == '') {
@@ -95,6 +97,5 @@
                 }
             })
         })
-
-   </script>
+    </script>
 @endsection

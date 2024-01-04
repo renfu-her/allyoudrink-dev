@@ -21,20 +21,23 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
-                                    <x:form::form method="POST" id="form_post" enctype="multipart/form-data" :action="route('product_category.store')" >
+                                    <x:form::form method="POST" id="form_post" enctype="multipart/form-data"
+                                        :action="route('product_category.store')">
 
                                         <div class="mt-3">
                                             <x:form::input name="name" label="分類名稱" required />
                                         </div>
 
                                         <div class="mt-3">
-                                            <x:form::input type="number" class="form-control" name="sort" label="順序" value="1" />
+                                            <x:form::input type="number" class="form-control" name="sort" label="順序"
+                                                value="1" />
                                         </div>
 
                                         <div class="mt-3 text-center">
-                                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
                                             <x:form::button.link class="btn-secondary" href="/backend/product_category">取消
                                             </x:form::button.link>
+                                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
+
                                         </div>
 
                                     </x:form::form>
@@ -60,27 +63,26 @@
 
             $('.password-input').find('label').html('密碼 <span style="color: red">(請輸入6 位以上，密碼必須包含字母以及數字組成)</span>')
 
-            $('#form_post').on('submit', function(){
+            $('#form_post').on('submit', function() {
                 let error_msg = [];
 
-                if($('input[name=name]').val() == ''){
+                if ($('input[name=name]').val() == '') {
                     error_msg.push('請輸入姓名');
                 }
 
-                if($('input[name=email]').val() == ''){
+                if ($('input[name=email]').val() == '') {
                     error_msg.push('請輸入E-mail');
                 }
 
-                if($('input[name=password]').val() == ''){
+                if ($('input[name=password]').val() == '') {
                     error_msg.push('請輸入密碼');
                 }
 
-                if(error_msg.length > 0){
+                if (error_msg.length > 0) {
                     alert(error_msg.join('\n'));
                     return false;
                 }
             })
         })
-
     </script>
 @endsection
