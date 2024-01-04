@@ -78,7 +78,7 @@ class ProductCategoryDetailController extends Controller
         $data->sort = $request->sort;
         $data->save();
 
-        return redirect('/backend/product_category/detail/' . $request->parent_id);
+        return redirect('/backend/product_category/detail/' . $data->parent_id);
     }
 
     // 產品刪除
