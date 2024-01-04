@@ -25,7 +25,7 @@
                                         :action="route('product_category.store')">
 
                                         <div class="mt-3">
-                                            <x:form::input name="name" label="次要分類名稱" required />
+                                            <x:form::input name="name" label="分類名稱" required />
                                         </div>
 
                                         <div class="mt-3">
