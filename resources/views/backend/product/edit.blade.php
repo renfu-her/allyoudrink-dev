@@ -22,11 +22,11 @@
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
                                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
-                                        :action="route('product.update', $product - > id)" :bind="$product">
+                                        :action="route('product.update', $product->id)" :bind="$product">
 
                                         <div class="mt-3">
                                             <x:form::select name="category_id" class="form-control" label="分類"
-                                                :options="$product_category" :selected="$product - > category_id" required />
+                                                :options="$product_category" :selected="$product->category_id" required />
                                         </div>
 
                                         <div class="mt-3">
@@ -65,7 +65,7 @@
 
                                         <div class="mt-3">
                                             <x:form::select class="form-control" name="status" label="啓用狀態"
-                                                :options="[1 => '啓用', 0 => '停用']" :selected="$product - > status" />
+                                                :options="[1 => '啓用', 0 => '停用']" :selected="$product->status" />
                                         </div>
 
                                         <div class="mt-3 text-center">

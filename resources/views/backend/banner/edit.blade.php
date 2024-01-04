@@ -22,7 +22,7 @@
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
                                     <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
-                                        :action="route('banner.update', $banner - > id)" :bind="$banner">
+                                        :action="route('banner.update', $banner->id)" :bind="$banner">
 
                                         <div class="mt-3">
                                             <x:form::input name="title" label="標題" />
@@ -50,7 +50,7 @@
 
                                         <div class="mt-3">
                                             <x:form::select class="form-control" name="status" label="啓用狀態"
-                                                :options="[1 => '啓用', 0 => '停用']" :selected="$banner - > status" />
+                                                :options="[1 => '啓用', 0 => '停用']" :selected="$banner->status" />
                                         </div>
 
                                         <div class="mt-3 text-center">
