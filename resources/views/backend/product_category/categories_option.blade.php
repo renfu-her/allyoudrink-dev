@@ -1,6 +1,6 @@
 @foreach ($categories as $category)
     <option value="{{ $category->id }}">
-        {{ str_repeat('--', $level) }} {{ $category->name }}
+        {{ str_repeat('-->', $level) }} {{ $category->name }}
     </option>
 
     @if ($category->children->isNotEmpty())
