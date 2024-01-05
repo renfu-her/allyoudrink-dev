@@ -4,6 +4,6 @@
     </option>
 
     @if ($category->children->isNotEmpty())
-        @include('categories_options', ['categories' => $category->children, 'level' => $level + 1])
+        @include('backend.product_category.categories_option', ['categories' => $category->children, 'level' => $level + 1])
     @endif
 @endforeach
