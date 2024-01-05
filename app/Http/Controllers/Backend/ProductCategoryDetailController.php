@@ -15,10 +15,11 @@ class ProductCategoryDetailController extends Controller
 
         $req = $request->all();
 
-        $product_categories = ProductCategory::where('parent_id', $categoryId)->get();
-        foreach ($product_categories as $product_category) {
-            $product_category->parent_name = $product_category->name;
-        }
+        $product_categories = [];
+        // $product_categories = ProductCategory::where('parent_id', $categoryId)->get();
+        // foreach ($product_categories as $product_category) {
+        //     $product_category->parent_name = $product_category->name;
+        // }
 
         $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
 

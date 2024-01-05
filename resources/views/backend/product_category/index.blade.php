@@ -24,32 +24,13 @@
                             <tr>
                                 <th style="width: 10%">ID</th>
                                 <th style="width: 60%">名稱</th>
-                                {{-- <th style="width: 10%">次要分類</th> --}}
                                 <th style="width: 10%">編輯</th>
                                 <th style="width: 10%">刪除</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($topLevelCategories as $key => $value)
-                            <tr>
-                                <td>{{ $value->id }}</td>
-                                <td>{{ $value->name }}</td>
-                                {{-- <td>
-                                    <button class="btn btn-primary" onclick="edit_parent_row({{ $value->id }})">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
-                                </td> --}}
-                                <td>
-                                    <button class="btn btn-primary" onclick="edit_row({{ $value->id }})">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger" onclick="delete_row({{ $value->id }})">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                            @foreach($topLevelCategories as $category)
+                                @include('backend.product_category.category_row', ['category' => $category, 'depth' => 0])
                             @endforeach
                         </tbody>
                     </table>
@@ -65,17 +46,14 @@
 @section('js')
 <script>
     $(function(){
-        $('#dataTable').DataTable({
-            "columnDefs": [{
-                targets: [0, 1, 2, 3],
-                orderable: false
-            }],
-            "order": [
-                [0, 'asc']
-            ],
-            "language": {
-                "url": "/admin/zh-HANT.json"
-            }
+        // $('#dataTable').DataTable({
+        //     "columnDefs": [{
+        //         targets: [0, 1, 2, 3],
+        //         orderable: false
+        //     }],
+        //     "language": {
+        //         "url": "/admin/zh-HANT.json"
+        //     }
         })
 
     })
