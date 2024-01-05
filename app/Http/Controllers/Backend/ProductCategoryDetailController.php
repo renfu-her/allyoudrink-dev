@@ -74,6 +74,7 @@ class ProductCategoryDetailController extends Controller
     {
 
         $data = ProductCategory::find($categoryId);
+        $data->parent_id = $request->parent_id;
         $data->name = $request->name;
         $data->sort = $request->sort;
         $data->save();
