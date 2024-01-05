@@ -57,10 +57,11 @@ class ProductCategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $product_category = ProductCategory::where('id', $id)->first();
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
 
         return view(
             'backend.product_category.edit',
-            compact('product_category')
+            compact('product_category', 'topLevelCategories')
         );
     }
 
