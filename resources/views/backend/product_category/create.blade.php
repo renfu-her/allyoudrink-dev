@@ -26,7 +26,7 @@
 
                                         <div class="mt-3">
                                             <select class="form-control" name="parent_id" label="分類名稱">
-                                                @include('categories_options', ['categories' => $topLevelCategories, 'level' => 0])
+                                                @include('backend.product_category.categories_options', ['categories' => $topLevelCategories, 'level' => 0])
                                             </select>
                                         </div>
 
