@@ -26,9 +26,9 @@
                                         :bind="$product_category">
 
                                         <div class="mt-3">
-                                            <select class="form-control" name="parent_id" label="分類名稱">
+                                            <x:form::select class="form-control" name="parent_id" label="主分類">
                                                 @include('backend.product_category.categories_option', ['categories' => $topLevelCategories, 'level' => 0])
-                                            </select>
+                                            </x:form::select>
                                         </div>
 
                                         <div class="mt-3">
