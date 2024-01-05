@@ -79,7 +79,7 @@ class ProductCategoryController extends Controller
     }
 
     // 產品刪除
-    public function destroy(Request $request, $id)
+    public function delete(Request $request, $id)
     {
         $product = ProductCategory::find($id);
         $product->delete();
