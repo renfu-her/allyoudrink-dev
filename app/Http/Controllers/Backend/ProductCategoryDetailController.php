@@ -20,13 +20,16 @@ class ProductCategoryDetailController extends Controller
             $product_category->parent_name = $product_category->name;
         }
 
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
+
         $productCategory = ProductCategory::where('id', $categoryId)->first();
 
         return view(
             'backend.product_category_detail.index',
             compact(
                 'product_categories',
-                'productCategory'
+                'productCategory',
+                'topLevelCategories'
             )
         );
     }

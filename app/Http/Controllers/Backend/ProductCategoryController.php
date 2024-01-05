@@ -14,15 +14,17 @@ class ProductCategoryController extends Controller
     public function index(Request $request)
     {
 
-        $product_categories = ProductCategory::where('parent_id', 0)->get();
-        foreach ($product_categories as $product_category) {
-            $product_category->parent_name = $product_category->name;
-        }
+        // $product_categories = ProductCategory::where('parent_id', 0)->get();
+        // foreach ($product_categories as $product_category) {
+        //     $product_category->parent_name = $product_category->name;
+        // }
+
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
 
         return view(
             'backend.product_category.index',
             compact(
-                'product_categories',
+                'topLevelCategories',
             )
         );
     }
