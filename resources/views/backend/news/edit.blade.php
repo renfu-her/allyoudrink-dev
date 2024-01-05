@@ -21,22 +21,24 @@
                             <!-- Component Preview-->
                             <div class="sbp-preview">
                                 <div class="sbp-preview-content">
-                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data" :action="route('news.update', $news->id)" :bind="$news">
+                                    <x:form::form method="PUT" id="form_post" enctype="multipart/form-data"
+                                        :action="route('news.update', $news->id)" :bind="$news">
 
-                                    <div class="mt-3">
-                                        <x:form::input name="title" label="標題" required />
-                                    </div>
+                                        <div class="mt-3">
+                                            <x:form::input name="title" label="標題" required />
+                                        </div>
 
-                                    <div class="mt-3">
-                                        <img src="{{ asset('upload/news/images/' . $news->id . '/' . $news->image) }}" style="width: 150px" alt="">
-                                        <x:form::input type="file" name="image" label="圖片" required/>
-                                    </div>
+                                        <div class="mt-3">
+                                            <img src="{{ asset('upload/news/images/' . $news->id . '/' . $news->image) }}"
+                                                style="width: 150px" alt="">
+                                            <x:form::input type="file" name="image" label="圖片" required />
+                                        </div>
 
-                                    <div class="mt-3">
-                                        <x:form::textarea name="content" label="內容" rows="10" />
-                                    </div>
+                                        <div class="mt-3">
+                                            <x:form::textarea name="content" label="內容" rows="10" />
+                                        </div>
 
-                                    <div class="mt-3">
+                                        <div class="mt-3">
                                             <x:form::select class="form-control" name="status" label="啓用狀態"
                                                 :options="[1 => '啓用', 0 => '停用']" :selected="$news->status" />
                                         </div>
@@ -68,23 +70,22 @@
     <script>
         $(function() {
 
-            $('#form_post').on('submit', function(){
+            $('#form_post').on('submit', function() {
                 let error_msg = [];
 
-                if($('input[name=title]').val() == ''){
+                if ($('input[name=title]').val() == '') {
                     error_msg.push('請輸入標題');
                 }
 
-                if($('input[name=content]').val() == ''){
+                if ($('input[name=content]').val() == '') {
                     error_msg.push('請輸入內容');
                 }
 
-                if(error_msg.length > 0){
+                if (error_msg.length > 0) {
                     alert(error_msg.join('\n'));
                     return false;
                 }
             })
         })
-
-   </script>
+    </script>
 @endsection

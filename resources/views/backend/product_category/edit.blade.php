@@ -26,6 +26,12 @@
                                         :bind="$product_category">
 
                                         <div class="mt-3">
+                                            <select class="form-control" name="parent_id" label="分類名稱">
+                                                @include('categories_options', ['categories' => $topLevelCategories, 'level' => 0])
+                                            </select>
+                                        </div>
+
+                                        <div class="mt-3">
                                             <x:form::input name="name" label="分類名稱" required />
                                         </div>
 
@@ -63,6 +69,7 @@
 
             $('#form_post').on('submit', function() {
                 let error_msg = [];
+
 
                 if ($('input[name=name]').val() == '') {
                     error_msg.push('請輸入分類名稱');

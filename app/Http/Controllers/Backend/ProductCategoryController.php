@@ -18,7 +18,7 @@ class ProductCategoryController extends Controller
         foreach ($product_categories as $product_category) {
             $product_category->parent_name = $product_category->name;
         }
-        
+
         return view(
             'backend.product_category.index',
             compact(
@@ -31,14 +31,10 @@ class ProductCategoryController extends Controller
     public function create(Request $request)
     {
 
-        $product_categories = ProductCategory::all();
-        $categories = [];
-        $categories[0] = '無上層分類';
-        foreach($product_categories as $key => $product_category){
-            $categories[$product_category->id] =  $product_category->name;
-        }
-        
-        return view('backend.product_category.create', compact('categories'));
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
+
+        return view('backend.product_category.create', compact('topLevelCategories'));
+
     }
 
     // 產品新增儲存
@@ -61,7 +57,7 @@ class ProductCategoryController extends Controller
     public function edit(Request $request, $id)
     {
         $product_category = ProductCategory::where('id', $id)->first();
-        
+
         return view(
             'backend.product_category.edit',
             compact('product_category')
