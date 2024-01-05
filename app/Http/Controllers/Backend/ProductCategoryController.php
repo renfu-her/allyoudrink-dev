@@ -70,7 +70,7 @@ class ProductCategoryController extends Controller
     {
 
         $data = ProductCategory::find($productId);
-        $data->parent_id = 0;
+        $data->parent_id = $request->parent_id;
         $data->name = $request->name;
         $data->sort = $request->sort;
         $data->save();
@@ -79,7 +79,7 @@ class ProductCategoryController extends Controller
     }
 
     // 產品刪除
-    public function delete(Request $request, $id)
+    public function destroy(Request $request, $id)
     {
         $product = ProductCategory::find($id);
         $product->delete();
