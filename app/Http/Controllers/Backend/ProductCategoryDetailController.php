@@ -55,7 +55,7 @@ class ProductCategoryDetailController extends Controller
         $data->save();
 
 
-        return redirect('/backend/product_category/detail/' . $req['parent_id']);
+        return redirect('/backend/product_category');
     }
 
     // 產品編輯頁面
@@ -78,16 +78,16 @@ class ProductCategoryDetailController extends Controller
         $data->sort = $request->sort;
         $data->save();
 
-        return redirect('/backend/product_category/detail/' . $data->parent_id);
+        return redirect('/backend/product_category');
     }
 
     // 產品刪除
     public function delete(Request $request, $categoryId)
     {
 
-        dd($categoryId);
-        $product = ProductCategory::find($categoryId)->delete();
+        $product = ProductCategory::find($categoryId);
+        $product->delete();
 
-        return redirect('/backend/product_category/detail/' . $request->parent_id);
+        return redirect('/backend/product_category');
     }
 }
