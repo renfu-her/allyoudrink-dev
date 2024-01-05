@@ -84,8 +84,9 @@ class ProductCategoryDetailController extends Controller
     // 產品刪除
     public function delete(Request $request, $categoryId)
     {
-        $product = ProductCategory::find($categoryId);
-        $product->delete();
+
+        dd($categoryId);
+        $product = ProductCategory::find($categoryId)->delete();
 
         return redirect('/backend/product_category/detail/' . $request->parent_id);
     }
