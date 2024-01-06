@@ -16,9 +16,9 @@ class IndexController extends Controller
     {
 
         $data = $request->all();
-        dd($data);
+        
         if(!empty($data['category'])){
-            $product = Product::where('category_id', $data['category'])->get();
+            $products = Product::where('category_id', $data['category'])->get();
         } else {
             $products = Product::get();
         }
