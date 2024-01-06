@@ -37,7 +37,7 @@
                         <div class="col-md-4">
                             <div class="card mb-4 product-wap rounded-0">
                                 <div class="card rounded-0">
-                                    <img class="card-img rounded-0 img-fluid" src="{{ asset('image/product-2.webp') }}">
+                                    <img class="card-img rounded-0 img-fluid" src="{{ asset('image/' . $product['id'] . '/' . $product['image']) }}">
                                     <div
                                         class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                         <ul class="list-unstyled">
@@ -82,7 +82,7 @@
                     @empty
                         <div class="col-md-12">
                             <div class="card mb-4 product-wap rounded-0">
-                                <div class="card rounded-0 text-center">
+                                <div class="card rounded-0 text-center" style="height: 200px">
                                     尚未有任何商品
                                 </div>
                             </div>
