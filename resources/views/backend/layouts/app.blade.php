@@ -90,10 +90,16 @@
 
                         <div class="sb-sidenav-menu-heading">內容管理</div>
 
+                        <a class="nav-link collapsed" href="{{ asset('backend/banner') }}" >
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Banner 管理
+                        </a>
+
                         <a class="nav-link collapsed" href="{{ asset('backend/qa') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Q & A 管理
                         </a>
+
                         <a class="nav-link collapsed" href="{{ asset('backend/news') }}" >
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             最新消息管理
