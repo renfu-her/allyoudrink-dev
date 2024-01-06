@@ -58,9 +58,9 @@
                                 <li class="list-inline-item">
                                     <p class="text-muted"><strong>White / Black</strong></p>
                                 </li>
-                            </ul>
+                            </ul> --}}
 
-                            <h6>Specification:</h6>
+                            {{-- <h6>Specification:</h6>
                             <ul class="list-unstyled pb-3">
                                 <li>Lorem ipsum dolor sit</li>
                                 <li>Amet, consectetur</li>
@@ -69,12 +69,12 @@
                                 <li>Ut enim ad minim</li>
                                 <li>Dolore magna aliqua</li>
                                 <li>Excepteur sint</li>
-                            </ul>
+                            </ul> --}}
 
                             <form action="" method="GET">
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
-                                    <div class="col-auto">
+                                    {{-- <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item">Size :
                                                 <input type="hidden" name="product-size" id="product-size" value="S">
@@ -88,11 +88,11 @@
                                             <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
-                                                Quantity
+                                                數量
                                                 <input type="hidden" name="product-quanity" id="product-quanity"
                                                     value="1">
                                             </li>
@@ -104,7 +104,7 @@
                                                     id="btn-plus">+</span></li>
                                         </ul>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="row pb-3">
                                     <div class="col d-grid">
                                         <button type="submit" class="btn btn-success btn-lg" name="submit"
