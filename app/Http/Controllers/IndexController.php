@@ -16,7 +16,7 @@ class IndexController extends Controller
     {
 
         $data = $request->all();
-        if($data['category']){
+        if(!empty($data['category'])){
             $product = Product::where('category_id', $data['category'])->get();
         } else {
             $products = Product::get();
