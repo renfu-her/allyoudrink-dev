@@ -31,7 +31,7 @@ class ProductController extends Controller
 
         $products = $products->orderByDesc('id')->get();
         $ship_ids = [];
-        
+
         foreach ($products as $product) {
             $product->category_name = ProductCategory::where('id', $product->category_id)->value('name');
             $product->image_url = asset('upload/images/' . $product->id . '/' . $product->image);
@@ -47,8 +47,8 @@ class ProductController extends Controller
             $ships[$ship->id] = $ship->name;
         }
 
-        
-        
+
+
         return view(
             'backend.product.index',
             compact(
@@ -71,6 +71,8 @@ class ProductController extends Controller
             $product_category[($key + 1)] = $value->name;
         }
 
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
+
         $ships = [];
         $ship_arr = Ship::where('status', 1)->get();
         foreach ($ship_arr as $ship) {
@@ -78,7 +80,14 @@ class ProductController extends Controller
         }
 
 
-        return view('backend.product.create', compact('product_category', 'ships'));
+        return view(
+            'backend.product.create',
+            compact(
+                'product_category',
+                'ships',
+                'topLevelCategories'
+            )
+        );
     }
 
     // 產品新增儲存
@@ -138,9 +147,17 @@ class ProductController extends Controller
 
         $ship_ids = explode(',', $product->ships);
 
+        $topLevelCategories = ProductCategory::where('parent_id', 0)->with('children')->get();
+
         return view(
             'backend.product.edit',
-            compact('product', 'product_category', 'ships', 'ship_ids')
+            compact(
+                'product',
+                'product_category',
+                'ships',
+                'ship_ids',
+                'topLevelCategories'
+            )
         );
     }
 

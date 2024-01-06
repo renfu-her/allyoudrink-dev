@@ -54,7 +54,7 @@
         //     "language": {
         //         "url": "/admin/zh-HANT.json"
         //     }
-        })
+        // })
 
     })
 

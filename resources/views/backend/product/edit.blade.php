@@ -25,8 +25,13 @@
                                         :action="route('product.update', $product->id)" :bind="$product">
 
                                         <div class="mt-3">
-                                            <x:form::select name="category_id" class="form-control" label="分類"
-                                                :options="$product_category" :selected="$product->category_id" required />
+                                            <select class="form-control" name="category_id" label="主分類">
+                                                @include('backend.product_category.categories_option', [
+                                                    'categories' => $topLevelCategories,
+                                                    'level' => 0,
+                                                    'category_id' => $product->category_id
+                                                ])
+                                            </select>
                                         </div>
 
                                         <div class="mt-3">

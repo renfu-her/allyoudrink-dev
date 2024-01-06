@@ -25,8 +25,9 @@
                                         :action="route('product.store')">
 
                                         <div class="mt-3">
-                                            <x:form::select name="category_id" class="form-control" label="分類"
-                                                :options="$product_category" required />
+                                            <select class="form-control" name="category_id" label="主分類">
+                                                @include('backend.product_category.categories_option', ['categories' => $topLevelCategories, 'level' => 0])
+                                            </select>
                                         </div>
 
                                         <div class="mt-3">
