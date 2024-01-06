@@ -8,7 +8,7 @@
                     <div class="gallery">
                         <!-- 大圖片 -->
                         <div class="main-image">
-                            <img src="{{ asset('upload/images/' . $product->id . '/' . $productImages[0]['image']) }}"/>
+                            <img src="{{ asset('upload/images/' . $product->id . '/' . $productImages[0]['image']) }}" class="col-12" />
                         </div>
 
                         <!-- 小圖的滑塊 -->
@@ -16,7 +16,7 @@
                         <div class="thumbnail-slider">
                             @foreach ($productImages as $image)
                                 <div><img src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" class="col-12" style="margin: 6px"
-                                        alt="縮圖1" data-image="large_image1.jpg" /></div>
+                                        alt="縮圖1" data-image="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" /></div>
                             @endforeach
                         </div>
                     </div>
