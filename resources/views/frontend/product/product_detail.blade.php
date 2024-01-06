@@ -7,8 +7,7 @@
                 <div class="col-lg-5 mt-5">
                     <div class="slider">
                         @foreach ($productImage as $image)
-                            <div><img src="{{ asset('upload/images/', $product->id . '/' . $image['image']) }}"
-                                    alt="圖片1"></div>
+                            <div><img src="{{ asset('upload/images/'. $product->id . '/' . $image['image']) }}"></div>
                         @endforeach
                     </div>
                 </div>
