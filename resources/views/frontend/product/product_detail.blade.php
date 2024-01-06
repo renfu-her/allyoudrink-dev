@@ -7,16 +7,21 @@
                 <div class="col-lg-5 mt-5">
                     <div class="gallery">
                         <!-- 大圖片 -->
-                        <div class="main-image">
-                            <img src="{{ asset('upload/images/' . $product->id . '/' . $productImages[0]['image']) }}" class="col-12" />
+                        <div class="main-image mb-3">
+                            <img src="{{ asset('upload/images/' . $product->id . '/' . $productImages[0]['image']) }}"
+                                class="img-fluid" />
                         </div>
 
                         <!-- 小圖的滑塊 -->
 
                         <div class="thumbnail-slider">
                             @foreach ($productImages as $image)
-                                <div><img src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" class="col-12" style="margin: 6px"
-                                        alt="縮圖1" data-image="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" /></div>
+                                <div class="px-1"><img
+                                        src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}"
+                                        alt="縮圖1"
+                                        data-image="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}"
+                                        class="img-fluid img-thumbnail" />
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -156,4 +161,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.min.css') }}">
+    <style>
+        .thumbnail-slider .px-1 {
+            /* 給定一個固定比例的容器尺寸，例如 1:1 */
+            width: 100px;
+            /* 或其他寬度 */
+            height: 100px;
+            /* 高度與寬度相同 */
+            overflow: hidden;
+            /* 超出容器部分會被裁切 */
+        }
+
+        .thumbnail-slider .px-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 裁切並覆蓋整個容器 */
+        }
+    </style>
 @endsection
