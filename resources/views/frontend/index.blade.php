@@ -54,7 +54,7 @@
                                 <div class="card-body">
                                     <a href="shop-single.html" class="h3 text-decoration-none">{{ $product['name'] }}</a>
                                     <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                        
+
                                         <li class="pt-2">
                                             <span
                                                 class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -83,8 +83,9 @@
                         </div>
                     @empty
                         <div class="col-md-12">
-                            <div class="card mb-4 product-wap rounded-0">
-                                <div class="card rounded-0 text-center" style="height: 200px">
+                            <div class="card mb-4 product-wap rounded-0"
+                                style="display: flex; align-items: center; justify-content: center; height: 200px;">
+                                <div class="card rounded-0">
                                     尚未有任何商品
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
                     @endforelse
 
                 </div>
-                <div div="row">
+                {{-- <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
                         <li class="page-item disabled">
                             <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#"
@@ -107,7 +108,7 @@
                                 href="#">3</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
 
         </div>
