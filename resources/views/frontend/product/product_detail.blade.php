@@ -5,12 +5,21 @@
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-5 mt-5">
-                    <div class="slider">
-                        @foreach ($productImage as $image)
-                            <div>
-                                <img class="col-4" src="{{ asset('upload/images/'. $product->id . '/' . $image['image']) }}">
-                            </div>
-                        @endforeach
+                    <div class="gallery">
+                        <!-- 大圖片 -->
+                        <div class="main-image">
+                            <img src="{{ asset('upload/images/' . $product->id . '/' . $productImages[0]['image']) }}"
+                                alt="主圖片" />
+                        </div>
+
+                        <!-- 小圖的滑塊 -->
+
+                        <div class="thumbnail-slider">
+                            @foreach ($productImages as $image)
+                                <div><img src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}"
+                                        alt="縮圖1" data-image="large_image1.jpg" /></div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
                 <!-- col end -->
@@ -116,22 +125,36 @@
 
 @section('js')
     <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script>
         $(function() {
-            $('.slider').slick({
-                slidesToShow: 3, // 一次顯示多少幻燈片
-                slidesToScroll: 1, // 一次滾動多少幻燈片
-                autoplay: true, // 啟用自動滾動
-                autoplaySpeed: 2000, // 自動滾動的速度（毫秒）
-                arrows: true, // 顯示前進/後退箭頭
-                dots: true // 顯示點指示器
-                // 可根據需要添加更多設置
+            // $('[data-fancybox="gallery"]').fancybox({
+            //     // 當前顯示的圖片改變時，更新大圖片
+            //     afterShow: function(instance, current) {
+            //         $('#main-image img').attr('src', current.src);
+            //     }
+            // });
+
+            // 初始化縮圖滑動功能，可以使用Slick或Owl Carousel
+            $('.thumbnail-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true, // 如果你想要自動播放，設定為true
+                prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                nextArrow: '<button type="button" class="slick-next">Next</button>',
+                // 其他設定...
+                // 其他適合您需求的設定
+            });
+            $('.thumbnail-slider img').on('click', function() {
+                var imgSrc = $(this).data('image');
+                $('.main-image img').attr('src', imgSrc);
             });
         })
     </script>
 @endsection
 
 @section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.min.css') }}">
 @endsection

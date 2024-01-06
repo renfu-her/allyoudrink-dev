@@ -13,7 +13,7 @@ class ProductIndexController extends Controller
     {
 
         $product = Product::find($product_id);
-        $productImage = ProductImage::where('product_id', $product_id)->get();
+        $productImages = ProductImage::where('product_id', $product_id)->get();
 
         return view(
             'frontend.product.product_detail',
