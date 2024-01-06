@@ -15,7 +15,7 @@
 
                         <div class="thumbnail-slider">
                             @foreach ($productImages as $image)
-                                <div><img src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" class="col-4"
+                                <div><img src="{{ asset('upload/images/' . $product->id . '/' . $image['image']) }}" class="col-12" style="margin: 6px"
                                         alt="縮圖1" data-image="large_image1.jpg" /></div>
                             @endforeach
                         </div>
