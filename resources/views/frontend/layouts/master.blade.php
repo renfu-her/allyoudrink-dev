@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
 
+    @yield('css')
 
 </head>
 
@@ -358,6 +359,8 @@
     <script src="{{ asset('js/templatemo.js') }}"></script>
     <script src="{{ asset('js/custom.js?t=' . time()) }}"></script>
     <!-- End Script -->
+
+    @yield('js')
 </body>
 
 </html>
