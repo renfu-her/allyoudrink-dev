@@ -12,6 +12,6 @@ class ProductIndexController extends Controller
 
         $product = Product::find($product_id);
 
-        return view('product.product_detail', compact('product'));
+        return view('frontend.product.product_detail', compact('product'));
     }
 }
