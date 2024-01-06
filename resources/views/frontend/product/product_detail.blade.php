@@ -130,5 +130,6 @@
 @endsection
 
 @section('css')
+    <link rel="stylesheet" href="{{ asset('css/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slick-theme.min.css') }}">
 @endsection
