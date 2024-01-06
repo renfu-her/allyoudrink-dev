@@ -33,6 +33,7 @@
             <div class="col-lg-9">
 
                 <div class="row">
+                    @foreach($products as $product)
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
@@ -78,6 +79,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">

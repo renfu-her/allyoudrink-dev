@@ -15,10 +15,13 @@ class IndexController extends Controller
     public function home(Request $request)
     {
 
-        $req = $request->all();
-
-        $products = Product::get();
-
+        $data = $request->all();
+        if($data['category']){
+            $product = Product::where('category_id', $data['category'])->get();
+        } else {
+            $products = Product::get();
+        }
+        
         $categories = ProductCategory::where('parent_id', 0)->with('children')->get();
 
         return view('frontend.index', compact('products', 'categories'));
