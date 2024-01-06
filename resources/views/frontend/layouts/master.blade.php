@@ -28,7 +28,7 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h3 align-self-center" style="width: 95%" href="/">
-                <span class="d-flex justify-content-center">購物網站</span>
+                <span class="d-flex justify-content-center">臺灣雜貨店</span>
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
