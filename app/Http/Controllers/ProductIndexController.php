@@ -17,7 +17,7 @@ class ProductIndexController extends Controller
 
         return view(
             'frontend.product.product_detail',
-            compact('product', 'productImage')
+            compact('product', 'productImages')
         );
     }
 }
