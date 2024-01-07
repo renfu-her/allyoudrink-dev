@@ -23,7 +23,7 @@ class ProductIndexController extends Controller
 
         $categories = ProductCategory::where('parent_id', 0)->with('children')->get();
 
-        return view('frontend.product', compact('products', 'categories'));
+        return view('frontend.product.product', compact('products', 'categories'));
     }
 
     public function detail(Request $request, $product_id)
