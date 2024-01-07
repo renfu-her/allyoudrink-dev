@@ -44,20 +44,11 @@
                 id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-evenly mx-lg-auto ">
-                        
+                        @foreach($productCategory as $category)
                         <li class="nav-item ">
-                            <a class="nav-link" href="/">首頁</a>
+                            <a class="nav-link" href="/product?category={{ $category['id'] }}">{{ $category['name'] }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/shop">購物</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">關於我們</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">聯絡我們</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
 
