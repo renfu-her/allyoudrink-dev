@@ -164,9 +164,10 @@
     <!-- Start Banner Hero -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+            @foreach ($banners as $key => $banner)
+                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="{{ $key }}"
+                    @if ($key == 0) class="active" @endif></li>
+            @endforeach
         </ol>
         <div class="carousel-inner">
             @foreach ($banners as $banner)
