@@ -15,10 +15,13 @@ class ProductIndexController extends Controller
     {
         $data = $request->all();
 
-        if (!empty($data['category'])) {
-            $products = Product::where('category_id', $data['category'])->get();
+        if (!empty($data['child'])) {
+            $products = Product::where('child', $data['child'])->get();
         } else {
-            $products = Product::get();
+            $category = ProductCategory::with('children')->find(1);
+            $categoryIds = $category->getAllChildrenIds();
+
+            $products = Product::whereIn('category_id', $categoryIds)->get();
         }
 
         $categories = ProductCategory::where('parent_id', $data['category'])->with('children')->get();

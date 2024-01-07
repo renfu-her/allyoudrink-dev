@@ -30,4 +30,15 @@ class ProductCategory extends Model
     {
         return $this->hasMany(ProductCategory::class, 'parent_id')->with('children');
     }
+
+    public function getAllChildrenIds($ids = [])
+    {
+        $ids[] = $this->id;
+
+        foreach ($this->children as $child) {
+            $ids = array_merge($ids, $child->getAllChildrenIds());
+        }
+
+        return $ids;
+    }
 }
