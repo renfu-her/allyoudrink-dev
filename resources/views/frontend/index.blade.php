@@ -18,7 +18,7 @@
                                 <ul class="collapse list-unstyled pl-3">
                                     @foreach ($category->children as $child)
                                         <li>
-                                            <a class="text-decoration-none" href="/product/?category={{ $child->id }}">
+                                            <a class="text-decoration-none" href="/product?category={{ $child->id }}">
                                                 {{ $child->name }}
                                             </a>
                                         </li>
