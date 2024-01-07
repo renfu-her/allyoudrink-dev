@@ -84,7 +84,7 @@ class BannerController extends Controller
     }
 
     // Banner 刪除
-    public function destroy(Request $request, $id)
+    public function delete(Request $request, $id)
     {
         $banner = Banner::find($id);
         $banner->delete();
