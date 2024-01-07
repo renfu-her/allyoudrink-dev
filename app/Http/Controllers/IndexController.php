@@ -28,6 +28,8 @@ class IndexController extends Controller
 
         $banners = Banner::orderByDesc('sort', 1)->where('status', 1)->get();
 
-        return view('frontend.index', compact('products', 'categories', 'banners'));
+        $productCategory = ProductCategory::where('parent_id', 0)->get();
+
+        return view('frontend.index', compact('products', 'categories', 'banners', 'productCategory'));
     }
 }
