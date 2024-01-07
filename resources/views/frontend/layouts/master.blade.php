@@ -172,9 +172,9 @@
         <div class="carousel-inner">
             @foreach ($banners as $key => $banner)
                 <div class="carousel-item @if ($key == 0) active @endif">
-                    <div class="container">
-                        <div class="row p-5">
-                            <div class="mx-auto col-md-12 order-lg-last">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="mx-auto col-md-12">
                                 <img class="object-fit-cover" src="{{ asset('upload/banner/' . $banner->image) }}">
                             </div>
                         </div>
