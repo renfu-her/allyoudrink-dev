@@ -18,7 +18,7 @@ class ProductIndexController extends Controller
         if (!empty($data['child'])) {
             $products = Product::where('child', $data['child'])->get();
         } else {
-            $category = ProductCategory::with('children')->find(1);
+            $category = ProductCategory::with('children')->find($data['category']);
             $categoryIds = $category->getAllChildrenIds();
 
             $products = Product::whereIn('category_id', $categoryIds)->get();
