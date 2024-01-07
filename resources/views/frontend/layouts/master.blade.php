@@ -176,7 +176,7 @@
                         <div class="row">
                             <div class="mx-auto col-md-12">
                                 <img class="img-fluid"
-                                    style="object-fit: cover; object-position: center; width: 100%; height: 450px;"
+                                    style="object-fit: cover; object-position: center; width: 100%; height: 100%;"
                                     src="{{ asset('upload/banner/' . $banner->image) }}" alt="Banner">
                             </div>
                         </div>
