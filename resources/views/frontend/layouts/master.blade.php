@@ -164,10 +164,9 @@
     <!-- Start Banner Hero -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
-            @foreach ($banners as $key => $banner)
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="{{ $key }}"
-                    @if ($key == 0) class="active" @endif></li>
-            @endforeach
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             @foreach ($banners as $banner)
@@ -175,7 +174,7 @@
                     <div class="container">
                         <div class="row p-5">
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="object-fit-cover" src="{{ asset('upload/banner/' . $banner->image) }}">
+                                <img class="object-fit-cover img-fluid" src="{{ asset('upload/banner/' . $banner->image) }}">
                             </div>
                         </div>
                     </div>
