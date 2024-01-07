@@ -6,9 +6,25 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Banner;
+use App\Models\ProductCategory;
 
 class ProductIndexController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        $data = $request->all();
+
+        if (!empty($data['category'])) {
+            $products = Product::where('category_id', $data['category'])->get();
+        } else {
+            $products = Product::get();
+        }
+
+        $categories = ProductCategory::where('parent_id', 0)->with('children')->get();
+
+        return view('frontend.product', compact('products', 'categories'));
+    }
 
     public function detail(Request $request, $product_id)
     {
