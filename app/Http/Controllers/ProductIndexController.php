@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\Banner;
 
 class ProductIndexController extends Controller
 {
 
     public function detail(Request $request, $product_id)
     {
-
+        $banners = Banner::orderByDesc('sort', 1)->where('status', 1)->get();
         $product = Product::find($product_id);
         $productImages = ProductImage::where('product_id', $product_id)->get();
 
         return view(
             'frontend.product.product_detail',
-            compact('product', 'productImages')
+            compact('product', 'productImages', 'banners')
         );
     }
 }

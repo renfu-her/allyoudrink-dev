@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Banner;
 
 // use App\Services\IndexService as Service;
 class IndexController extends Controller
@@ -25,6 +26,8 @@ class IndexController extends Controller
         
         $categories = ProductCategory::where('parent_id', 0)->with('children')->get();
 
-        return view('frontend.index', compact('products', 'categories'));
+        $banners = Banner::orderByDesc('sort', 1)->where('status', 1)->get();
+
+        return view('frontend.index', compact('products', 'categories', 'banners'));
     }
 }
