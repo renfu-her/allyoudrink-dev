@@ -59,6 +59,7 @@ route::group(['prefix' => 'backend', 'middleware' => 'auth'], function () {
     route::get('/mail_notify/delete/{mail_notify_id}', [MailNotifyController::class, 'delete']);
 
     // Banner 管理
+    route::get('/banner/delete/{banner_id}', [BannerController::class, 'delete'])->name('banner.delete');
     route::resource('/banner', BannerController::class);
 
     // 訂單管理
