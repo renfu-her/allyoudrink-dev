@@ -26,7 +26,16 @@ class ProductIndexController extends Controller
 
         $productCategory = ProductCategory::where('parent_id', 0)->get();
 
-        return view('frontend.product.product', compact('products', 'categories', 'banners', 'productCategory'));
+        return view(
+            'frontend.product.product',
+            compact(
+                'products',
+                'categories',
+                'banners',
+                'productCategory',
+                'data'
+            )
+        );
     }
 
     public function detail(Request $request, $product_id)
@@ -38,10 +47,12 @@ class ProductIndexController extends Controller
 
         return view(
             'frontend.product.product_detail',
-            compact('product', 
-            'productImages', 
-            'banners', 
-            'productCategory',)
+            compact(
+                'product',
+                'productImages',
+                'banners',
+                'productCategory',
+            )
         );
     }
 }
