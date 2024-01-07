@@ -36,7 +36,7 @@
                     @forelse($products as $product)
                         <div class="col-md-4">
                             <div class="card mb-4 product-wap rounded-0">
-                                <div class="card rounded-0">
+                                <div class="card rounded-0" style="height: 300px">
                                     <img class="card-img rounded-0 img-fluid"
                                         src="{{ asset('upload/images/' . $product['id'] . '/' . $product['image']) }}">
                                     <div
