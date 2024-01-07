@@ -160,7 +160,7 @@
     </div>
 
 
-    @if (Request::is('/') && Request::is('/product'))
+    @if (Request::is('/') || Request::is('/product'))
         <!-- Start Banner Hero -->
         <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
