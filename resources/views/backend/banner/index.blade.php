@@ -87,7 +87,7 @@
 
     const delete_row = (id) => {
         if(confirm('確定刪除？')){
-            location.href = '/backend/product/delete/' + id;
+            location.href = '/backend/banner/delete/' + id;
         }
     }
 </script>

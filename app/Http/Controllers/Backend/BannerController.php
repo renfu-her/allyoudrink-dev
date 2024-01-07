@@ -87,7 +87,6 @@ class BannerController extends Controller
     public function delete(Request $request, $id)
     {
         $banner = Banner::find($id);
-        dd($banner);
         $banner->delete();
 
         return redirect('backend/banner');
