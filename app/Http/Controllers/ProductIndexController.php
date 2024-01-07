@@ -34,10 +34,14 @@ class ProductIndexController extends Controller
         $banners = Banner::orderByDesc('sort', 1)->where('status', 1)->get();
         $product = Product::find($product_id);
         $productImages = ProductImage::where('product_id', $product_id)->get();
+        $productCategory = ProductCategory::where('parent_id', 0)->get();
 
         return view(
             'frontend.product.product_detail',
-            compact('product', 'productImages', 'banners')
+            compact('product', 
+            'productImages', 
+            'banners', 
+            'productCategory',)
         );
     }
 }
