@@ -21,7 +21,7 @@ class ProductIndexController extends Controller
             $products = Product::get();
         }
 
-        $categories = ProductCategory::where('parent_id', 0)->with('children')->get();
+        $categories = ProductCategory::where('parent_id', $data['category'])->with('children')->get();
         $banners = Banner::orderByDesc('sort', 1)->where('status', 1)->get();
 
         $productCategory = ProductCategory::where('parent_id', 0)->get();
