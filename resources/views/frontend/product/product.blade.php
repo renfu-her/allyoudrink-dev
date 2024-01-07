@@ -10,7 +10,7 @@
                 <ul class="list-unstyled templatemo-accordion">
                     @foreach ($categories as $category)
                         <li class="pb-3">
-                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="/product?category={{ $category->id }}">
+                            <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="/product?category={{ $data['category'] }}">
                                 {{ $category->name }}
                                 <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
                             </a>
@@ -18,7 +18,7 @@
                                 <ul class="collapse list-unstyled pl-3">
                                     @foreach ($category->children as $child)
                                         <li>
-                                            <a class="text-decoration-none" href="/product/?category={{ $category->id }}&child={{ $child->id }}">
+                                            <a class="text-decoration-none" href="/product/?category={{ $data['category'] }}&child={{ $child->id }}">
                                                 {{ $child->name }}
                                             </a>
                                         </li>
