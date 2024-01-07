@@ -174,7 +174,7 @@
                 <div class="carousel-item @if ($key == 0) active @endif">
                     <div class="container">
                         <div class="row p-5">
-                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <div class="mx-auto col-md-12 order-lg-last">
                                 <img class="object-fit-cover" src="{{ asset('upload/banner/' . $banner->image) }}">
                             </div>
                         </div>
